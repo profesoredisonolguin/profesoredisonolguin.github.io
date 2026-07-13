@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educación Musical — Profesor Edison Olguín</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap');
+:root{
+  --bg:#f5f3ee; --surface:#ffffff; --surface2:#faf9f6; --border:#e0d9ce;
+  --accent:#8b6914; --accent2:#b8891e; --accent-light:#f5e9cc;
+  --text:#2c2416; --text-muted:#8a7d6b;
+  --green:#2d7d4f; --blue:#1a5fa8; --teal:#0d7377; --radius:12px;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+body{font-family:'DM Sans',sans-serif; background:var(--bg); color:var(--text); min-height:100vh;
+     display:flex; align-items:center; justify-content:center; padding:32px 16px;}
+.container{max-width:920px; width:100%; background:var(--surface); border:1px solid var(--border);
+     border-radius:var(--radius); padding:40px 32px; box-shadow:0 4px 24px rgba(139,105,20,0.08);}
+
+/* Encabezado */
+.header{text-align:center;}
+.clef{font-size:110px; line-height:0.9; color:#c9a84c; opacity:0.75; font-family:Georgia,serif; margin-bottom:4px;}
+h1{font-family:'Playfair Display',serif; font-size:2rem; color:var(--accent); letter-spacing:0.02em; margin-bottom:6px;}
+.sub{font-size:14px; color:var(--accent2); letter-spacing:0.08em; font-style:italic;}
+.divider{display:flex; align-items:center; gap:10px; margin:22px 0 26px;}
+.divider .line{flex:1; height:1px;}
+.divider .l1{background:linear-gradient(to right,transparent,#c9a84c);}
+.divider .l2{background:linear-gradient(to left,transparent,#c9a84c);}
+.divider .star{font-size:15px; color:#c9a84c; opacity:0.6;}
+.intro{text-align:center; color:var(--text-muted); font-size:0.95rem; line-height:1.6; margin-bottom:30px;}
+
+/* Tarjetas */
+.cards{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+@media(max-width:680px){ .cards{grid-template-columns:1fr;} .clef{font-size:80px;} h1{font-size:1.5rem;} }
+.card{display:flex; flex-direction:column; background:var(--surface2); border:1px solid var(--border);
+     border-radius:var(--radius); padding:26px 24px; text-decoration:none; color:inherit;
+     transition:all 0.22s; position:relative; overflow:hidden;}
+.card:hover{transform:translateY(-4px); border-color:var(--accent2); box-shadow:0 8px 26px rgba(139,105,20,0.16); background:var(--surface);}
+.card .ico{font-size:34px; margin-bottom:12px;}
+.card h2{font-family:'Playfair Display',serif; font-size:1.2rem; color:var(--accent); margin-bottom:8px;}
+.card p{font-size:0.88rem; color:var(--text-muted); line-height:1.55; margin-bottom:16px; flex:1;}
+.card .feat{list-style:none; margin-bottom:18px;}
+.card .feat li{font-size:0.82rem; color:var(--text); padding:3px 0 3px 18px; position:relative;}
+.card .feat li:before{content:'✦'; position:absolute; left:0; color:#c9a84c; font-size:10px;}
+.card .go{display:inline-block; align-self:flex-start; font-size:13px; font-weight:600; padding:9px 22px;
+     border-radius:24px; background:linear-gradient(135deg,var(--accent),var(--accent2)); color:white;
+     box-shadow:0 4px 14px rgba(139,105,20,0.22); transition:all 0.2s;}
+.card:hover .go{box-shadow:0 6px 18px rgba(139,105,20,0.32);}
+.card .stripe{position:absolute; top:0; left:0; width:100%; height:4px;}
+.card.rub .stripe{background:linear-gradient(90deg,var(--accent),var(--accent2));}
+.card.plan .stripe{background:linear-gradient(90deg,var(--teal),var(--green));}
+
+.foot{text-align:center; margin-top:30px; font-size:12px; color:var(--text-muted);}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="header">
+    <div class="clef">𝄞</div>
+    <h1>Educación Musical</h1>
+    <div class="sub">Profesor Edison Olguín</div>
+  </div>
+
+  <div class="divider">
+    <div class="line l1"></div><div class="star">✦</div><div class="line l2"></div>
+  </div>
+
+  <p class="intro">Bienvenido. Elige la herramienta con la que quieres trabajar.</p>
+
+  <div class="cards">
+
+    <a class="card rub" id="link-rubrica" href="#">
+      <div class="stripe"></div>
+      <div class="ico">📋</div>
+      <h2>Rúbrica de Evaluación</h2>
+      <p>Genera rúbricas por curso, califica a los estudiantes y revisa el análisis de resultados.</p>
+      <ul class="feat">
+        <li>Indicadores personalizables</li>
+        <li>Ranking y estudiantes en riesgo</li>
+        <li>Historial con gráficos</li>
+        <li>Portal para apoderados</li>
+      </ul>
+      <span class="go">Abrir rúbrica →</span>
+    </a>
+
+    <a class="card plan" id="link-planificaciones" href="#">
+      <div class="stripe"></div>
+      <div class="ico">🎼</div>
+      <h2>Planificaciones</h2>
+      <p>Revisa las clases de 4° a 8° básico con todos sus recursos, detalles y actividades de apoyo.</p>
+      <ul class="feat">
+        <li>Clases completas con enlaces</li>
+        <li>Recursos y actividades de apoyo</li>
+        <li>Imprimir cada clase</li>
+        <li>Marcar el avance curricular</li>
+      </ul>
+      <span class="go">Abrir planificaciones →</span>
+    </a>
+
+  </div>
+
+  <div class="foot">Educación Musical &nbsp;·&nbsp; Profesor Edison Olguín</div>
+</div>
+
+<script>
+// ─────────────────────────────────────────────────────────────
+//  ENLACES — edita solo estas dos líneas si cambias la ubicación
+// ─────────────────────────────────────────────────────────────
+const URL_RUBRICA         = "evaluaciones/";
+const URL_PLANIFICACIONES = "planificaciones/";
+
+document.getElementById('link-rubrica').href = URL_RUBRICA;
+document.getElementById('link-planificaciones').href = URL_PLANIFICACIONES;
+</script>
+</body>
+</html>
